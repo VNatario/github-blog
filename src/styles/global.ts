@@ -8,8 +8,16 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        background: ${({ theme }) => theme['base-background']};
+        color: ${({ theme }) => theme['base-text']};
         -webkit-font-smoothing: antialiased;
     }
+
+    body, input {
+        font-family: 'Nunito', sans-serif;
+        line-height: 1.6;
+    }
+
 
   
 `
