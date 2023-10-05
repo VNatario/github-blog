@@ -1,4 +1,4 @@
-import { GlobalStyles } from "./styles/global";
+import { GlobalStyles } from './styles/global'
 
 export function App() {
   return (
@@ -6,5 +6,5 @@ export function App() {
       <h1>Github-Blog</h1>
       <GlobalStyles />
     </>
-  );
+  )
 }
