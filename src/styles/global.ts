@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    body, input {
+    body, input, a {
         font-family: 'Nunito', sans-serif;
         line-height: 1.6;
     }

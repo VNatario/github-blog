@@ -1,18 +1,16 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ProfileCardContainer } from './styles'
+
+import { ExternalLink } from '../ExternalLink'
 
 export function ProfileCard() {
   return (
-    <ProfileCardContainer>
-      <img src="" alt="" />
+    <ProfileCardContainer className="container">
+      <img src="https://github.com/VNatario.png" alt="" />
       <div>
-        <div>
-          <h2>Cameron Williamson</h2>
-          <a href="">
-            github
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
-        </div>
+        <header>
+          <h2>Vitor Natario</h2>
+          <ExternalLink text="github" href="#" target="_blank" />
+        </header>
       </div>
     </ProfileCardContainer>
   )
