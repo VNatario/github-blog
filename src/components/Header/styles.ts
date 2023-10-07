@@ -7,6 +7,10 @@ export const HeaderContainer = styled.header`
   background: ${() => css`url(${cover}) no-repeat center`};
   background-size: cover;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+
+  img {
+    margin-top: 4rem;
+  }
 `

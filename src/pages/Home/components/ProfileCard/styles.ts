@@ -6,6 +6,10 @@ export const ProfileCardContainer = styled.div`
   padding: 2rem;
   display: flex;
   gap: 2rem;
+  min-height: 13.25rem;
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-top: -5.5rem;
 
   img {
     height: 9.25rem;
@@ -13,13 +17,41 @@ export const ProfileCardContainer = styled.div`
     border-radius: 8px;
   }
 
-  & > div {
-    flex: 1;
+  a {
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
   }
 
   header {
-    display: flex;
     justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: ${(props) => props.theme['base-title']};
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
     align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: ${(props) => props.theme['base-subtitle']};
+
+      svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        color: ${(props) => props.theme['base-label']};
+      }
+    }
   }
 `
