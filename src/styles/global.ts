@@ -18,6 +18,10 @@ export const GlobalStyles = createGlobalStyle`
         line-height: 1.6;
     }
 
+    :focus{
+        outline: 0;
+        box-shadow: 0 0 0 1px ${(props) => props.theme.blue};
+    }
 
   
 `
