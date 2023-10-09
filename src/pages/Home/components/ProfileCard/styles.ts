@@ -11,6 +11,7 @@ export const ProfileCardContainer = styled.div`
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   margin-top: -5.5rem;
+  margin-bottom: 4.5rem;
 
   a {
     position: absolute;
