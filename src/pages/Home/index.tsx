@@ -1,18 +1,22 @@
-import { Input } from '../../components/Input'
+import { Card } from '../../components/Card'
 import { ProfileCard } from './components/ProfileCard'
-import { HomeContainer } from './styles'
+import { SearchInput } from './components/SearchInput'
+import { CardListContainer, HomeContainer } from './styles'
 
 export function Home() {
   return (
     <HomeContainer>
       <ProfileCard />
+      <SearchInput />
 
-      <div>
-        <h2>Publicações</h2>
-        <span>6 publicações</span>
-      </div>
-
-      <Input placeholder="Buscar conteúdo" />
+      <CardListContainer>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </CardListContainer>
     </HomeContainer>
   )
 }
