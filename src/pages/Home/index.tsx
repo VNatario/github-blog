@@ -47,7 +47,7 @@ export function Home() {
   return (
     <HomeContainer>
       <ProfileCard />
-      <SearchInput getPosts={getPosts} />
+      <SearchInput getPosts={getPosts} postsLength={posts.length} />
 
       <CardListContainer>
         {posts.map((post) => (
