@@ -10,7 +10,11 @@ const searchFormScheema = zod.object({
 
 type SearchFormInput = zod.infer<typeof searchFormScheema>
 
-export function SearchInput() {
+interface SearchInputProps {
+  getPosts: (query?: string) => Promise<void>
+}
+
+export function SearchInput({ getPosts }: SearchInputProps) {
   const { register, handleSubmit } = useForm<SearchFormInput>({
     resolver: zodResolver(searchFormScheema),
   })
