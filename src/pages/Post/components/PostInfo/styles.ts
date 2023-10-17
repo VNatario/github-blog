@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
-export const PostInfoContainer = styled.div`
+export const PostInfoContainer = styled.section`
   padding: 2rem;
   background: ${(props) => props.theme['base-profile']};
   border-radius: 10px;
-  height: 10.5rem;
+  min-height: 10.5rem;
   margin-top: calc((10.5rem - 5rem) * -1);
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
 
-  div {
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,21 +20,14 @@ export const PostInfoContainer = styled.div`
     line-height: 1.3;
     color: ${(props) => props.theme['base-title']};
     margin-bottom: 0.5rem;
-
-    /* adicionando reticências (...) caso o titulo passe de 1 linha*/
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
   }
 `
 
 export const InfoList = styled.ul`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  list-style: none;
 
   li {
     color: ${(props) => props.theme['base-span']};
@@ -41,6 +35,7 @@ export const InfoList = styled.ul`
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    line-height: 0px;
 
     svg {
       color: ${(props) => props.theme['base-label']};

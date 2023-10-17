@@ -4,7 +4,7 @@ import { InfoList, PostInfoContainer } from './styles'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faCalendarDay,
-  // faChevronLeft,
+  faChevronLeft,
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,7 +12,13 @@ export function PostInfo() {
   return (
     <PostInfoContainer>
       <header>
-        <ExternalLink text="ver no github" href="#" target="_blank" />
+        <ExternalLink
+          as="button"
+          icon={<FontAwesomeIcon icon={faChevronLeft} />}
+          text="Voltar"
+          href="#"
+          $variant="iconLeft"
+        />
         <ExternalLink text="ver no github" href="#" target="_blank" />
       </header>
 

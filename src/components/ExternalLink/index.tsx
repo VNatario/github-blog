@@ -1,24 +1,19 @@
-import {
-  AnchorHTMLAttributes,
-  //  ComponentProps
-} from 'react'
-import { ExternalLinkContainer } from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ComponentProps, ReactNode } from 'react'
+import { ExternalLinkContainer } from './styles'
 
-//Atribuindo as caracteristicas a um Elemento ancora com type ou interface
-// type ExternalLinkProps = ComponentProps<typeof ExternalLinkContainer> & {
-//   text: string
-// }
-
-interface ExternalLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+type ExternalLinkProps = ComponentProps<typeof ExternalLinkContainer> & {
   text: string
+  icon?: ReactNode
+  $variant?: 'iconLeft'
 }
 
-export function ExternalLink({ text, ...rest }: ExternalLinkProps) {
+export function ExternalLink({ text, icon, ...rest }: ExternalLinkProps) {
   return (
     <ExternalLinkContainer {...rest}>
-      {text} <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+      {text}
+      {icon ?? <FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
     </ExternalLinkContainer>
   )
 }

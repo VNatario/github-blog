@@ -4,15 +4,27 @@ import { InfoList, PostInfoContainer } from './styles'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faCalendarDay,
-  // faChevronLeft,
+  faChevronLeft,
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 export function PostInfo() {
+  const navigate = useNavigate()
+
+  function goBack() {
+    navigate(-1)
+  }
+
   return (
     <PostInfoContainer>
       <header>
-        <ExternalLink text="ver no github" href="#" target="_blank" />
+        <ExternalLink
+          onClick={goBack}
+          icon={<FontAwesomeIcon icon={faChevronLeft} />}
+          text="Voltar"
+          $variant="iconLeft"
+        />
         <ExternalLink text="ver no github" href="#" target="_blank" />
       </header>
 

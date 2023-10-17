@@ -1,19 +1,25 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const ExternalLinkContainer = styled.a`
+interface ExternalLinkProps {
+  $variant?: 'iconLeft'
+}
+
+export const ExternalLinkContainer = styled.a<ExternalLinkProps>`
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  height: 1.1875rem;
-
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.blue};
   font-size: 0.75rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.blue};
+  transition: 400ms;
   border-bottom: 1px solid transparent;
-  transition: 500ms;
+  height: 1.1875rem;
+  line-height: 0px;
+  cursor: pointer;
 
   svg {
     width: 0.75rem;
@@ -23,4 +29,10 @@ export const ExternalLinkContainer = styled.a`
   &:hover {
     border-color: ${({ theme }) => theme.blue};
   }
+
+  ${(props) =>
+    props.$variant === 'iconLeft' &&
+    css`
+      flex-direction: row-reverse;
+    `}
 `
