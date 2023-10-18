@@ -25,7 +25,7 @@ export function PostInfo({ post, isLoading }: PostInfoProps) {
   }
 
   console.log(post)
-  const formattedDate = relativeDateFormatter(post.created_at)
+  const formattedDate = relativeDateFormatter(post?.created_at)
 
   return (
     <PostInfoContainer>
