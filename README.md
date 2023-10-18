@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+# Github Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação desenvolvida com:
+- Vite
+- React
+- TypeScript
+- Styled Component
+- React Hook Form
+- Zod
+- React Roouter Dom
+- Axios
+- MomentJS
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Sobre a aplicação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+A aplicação consiste em um blog onde os postes deste blog são as devidas issues deste mesmo repositório.
+Caso queira criar um post basta criar uma issue neste repositório através deste link: <https://github.com/VNatario/github-blog/issues/new>
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Execultando a aplicação
+
+Para execultar o aplicativo basta clonar este repositorio e instalar as dependências do mesmo com seu gerenciador de pacotes
+
+~~~NPM
+npm install
+~~~
+
+~~~YARN
+yarn install
+~~~
+
+Apôs instalar as dependencias basta inicializar o projeto com:
+~~~NPM
+npm run dev
+~~~
+
+~~~YARN
+yarn dev
+~~~
+
+E acessar o link indicado no seu terminal. Por exemplo: <http://localhost:5173>
