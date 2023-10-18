@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 
 export const PostInfoContainer = styled.section`
+  min-height: 10.5rem;
   padding: 2rem;
   background: ${(props) => props.theme['base-profile']};
   border-radius: 10px;
-  min-height: 10.5rem;
   margin-top: calc((10.5rem - 5rem) * -1);
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
 
   header {
     display: flex;

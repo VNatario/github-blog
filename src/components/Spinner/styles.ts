@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const SpinnerContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .spinner {
-    margin: 0 auto;
     width: 50px;
     height: 40px;
     text-align: center;
