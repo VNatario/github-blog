@@ -10,6 +10,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { useCallback, useEffect, useState } from 'react'
 import { api } from '../../../../lib/axios'
+import { Spinner } from '../../../../components/Spinner'
 
 const username = import.meta.env.VITE_GITHUB_USERNAME
 
@@ -35,35 +36,45 @@ export function ProfileCard() {
     } finally {
       setIsLoading(false)
     }
-  }, [profileData])
+  }, [])
 
   useEffect(() => {
     getProfileData()
-  }, [])
+  }, [getProfileData])
 
   return (
-    <ProfileCardContainer className="container">
-      <ProfileImage src={profileData.avatar_url} alt="" />
-      <ExternalLink text="github" href={profileData.html_url} target="_blank" />
-      <ProfileDetails>
-        <h1>{profileData.name}</h1>
+    <ProfileCardContainer>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <ProfileImage src={profileData.avatar_url} alt="" />
+          <ExternalLink
+            text="github"
+            href={profileData.html_url}
+            target="_blank"
+          />
+          <ProfileDetails>
+            <h1>{profileData.name}</h1>
 
-        <p>{profileData.bio}</p>
-        <ProfileInfoList>
-          <li>
-            <FontAwesomeIcon icon={faGithub} /> {profileData.login}
-          </li>
-          {profileData?.company && (
-            <li>
-              <FontAwesomeIcon icon={faBuilding} /> {profileData.company}
-            </li>
-          )}
-          <li>
-            <FontAwesomeIcon icon={faUserGroup} /> {profileData.followers}{' '}
-            seguidores
-          </li>
-        </ProfileInfoList>
-      </ProfileDetails>
+            <p>{profileData.bio}</p>
+            <ProfileInfoList>
+              <li>
+                <FontAwesomeIcon icon={faGithub} /> {profileData.login}
+              </li>
+              {profileData?.company && (
+                <li>
+                  <FontAwesomeIcon icon={faBuilding} /> {profileData.company}
+                </li>
+              )}
+              <li>
+                <FontAwesomeIcon icon={faUserGroup} /> {profileData.followers}{' '}
+                seguidores
+              </li>
+            </ProfileInfoList>
+          </ProfileDetails>
+        </>
+      )}
     </ProfileCardContainer>
   )
 }

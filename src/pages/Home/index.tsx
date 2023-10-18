@@ -4,6 +4,7 @@ import { ProfileCard } from './components/ProfileCard'
 import { SearchInput } from './components/SearchInput'
 import { CardListContainer, HomeContainer } from './styles'
 import { api } from '../../lib/axios'
+import { Spinner } from '../../components/Spinner'
 
 const username = import.meta.env.VITE_GITHUB_USERNAME
 const repoName = import.meta.env.VITE_GITHUB_REPONAME
@@ -24,21 +25,18 @@ export function Home() {
   const [posts, setPosts] = useState<InterfacePost[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const getPosts = useCallback(
-    async (query: string = '') => {
-      try {
-        setIsLoading(true)
-        const response = await api.get(
-          `/search/issues?q=${query}%20repo:${username}/${repoName}`
-        )
+  const getPosts = useCallback(async (query: string = '') => {
+    try {
+      setIsLoading(true)
+      const response = await api.get(
+        `/search/issues?q=${query}%20repo:${username}/${repoName}`
+      )
 
-        setPosts(response.data.items)
-      } finally {
-        setIsLoading(false)
-      }
-    },
-    [posts]
-  )
+      setPosts(response.data.items)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
 
   useEffect(() => {
     getPosts()
@@ -49,11 +47,15 @@ export function Home() {
       <ProfileCard />
       <SearchInput getPosts={getPosts} postsLength={posts.length} />
 
-      <CardListContainer>
-        {posts.map((post) => (
-          <Card key={post.number} post={post} />
-        ))}
-      </CardListContainer>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <CardListContainer>
+          {posts.map((post) => (
+            <Card key={post.number} post={post} />
+          ))}
+        </CardListContainer>
+      )}
     </HomeContainer>
   )
 }

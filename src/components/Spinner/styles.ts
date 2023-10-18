@@ -4,7 +4,7 @@ export const SpinnerContainer = styled.div`
   width: 100%;
   height: 100%;
   .spinner {
-    margin: 100px auto;
+    margin: 0 auto;
     width: 50px;
     height: 40px;
     text-align: center;
